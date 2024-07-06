@@ -1,0 +1,1 @@
+Leia 2 valores inteiros (A e B). Após, o programa deve mostrar uma mensagem "São Multiplos" ou " Não são Multiplos", indicando se os valores lidos são multiplos entre si. Atenção: os números devem ser digitados em orgem crescente ou decrescente.
