@@ -1,0 +1,1 @@
+Escreva um programa para ler as coordenadas (X,Y) de uma quantidade indeterminada de pontos no sistema cartesiano. Para cada ponto escreva o quadrante a que ele pertence. O algorítmo será encerrado quando pelo menos uma de duas cordenadas for NULA (nesta situação sem escrever mensagem alguma);
