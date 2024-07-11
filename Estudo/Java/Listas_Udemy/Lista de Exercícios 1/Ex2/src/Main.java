@@ -9,5 +9,6 @@ public class Main {
         double area = pi * Math.pow(raio, 2);
 
         System.out.printf("A = %.4f", area);
+        entrada.close();
     }
 }
