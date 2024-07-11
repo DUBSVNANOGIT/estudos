@@ -9,5 +9,6 @@ public class Main {
             senha = entrada.nextInt();
         }
         System.out.println("Acesso Permitido");
+        entrada.close();
     }
 }
