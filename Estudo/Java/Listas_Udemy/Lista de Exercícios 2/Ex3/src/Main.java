@@ -12,5 +12,6 @@ public class Main {
         }else {
             System.out.print("Não são Multiplos");
         }
+        entrada.close();
     }
 }
