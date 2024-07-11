@@ -30,7 +30,7 @@ public class Main {
             default:
                 System.out.println("Erro!");
         }
-
+        entrada.close();
 
     }
 }
