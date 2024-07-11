@@ -21,5 +21,6 @@ public class Main {
         } else {
             System.out.println("Valor Inválido");
         }
+        entrada.close();
     }
 }
