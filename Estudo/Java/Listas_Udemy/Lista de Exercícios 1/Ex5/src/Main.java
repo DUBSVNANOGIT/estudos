@@ -17,5 +17,6 @@ public class Main {
         double TOTAL = (qtdePeca1 * valorUnitarioPeca1) + (qtdePeca2 * valorUnitarioPeca2);
 
         System.out.printf("VALOR A PAGAR: R$ %.2f", TOTAL);
+        entrada.close();
     }
 }
