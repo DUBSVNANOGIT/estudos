@@ -10,6 +10,6 @@ public class Main {
         } else {
             System.out.println("IMPAR");
         }
-
+        entrada.close();
     }
 }
