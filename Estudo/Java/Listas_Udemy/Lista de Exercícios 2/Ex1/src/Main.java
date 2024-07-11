@@ -10,5 +10,6 @@ public class Main {
         } else {
             System.out.println("NÂO NEGATIVO");
         }
+        entrada.close();
     }
 }
