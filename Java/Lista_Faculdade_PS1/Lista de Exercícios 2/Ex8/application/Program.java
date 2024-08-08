@@ -23,6 +23,9 @@ public class Program {
             if (altura > maior) {
                 maior = altura;
             }
+            else {
+                menor = altura;
+            }
             if (altura < menor){
                 menor = altura;
             }
