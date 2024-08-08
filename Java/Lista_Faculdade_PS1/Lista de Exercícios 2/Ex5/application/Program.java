@@ -7,10 +7,10 @@ public class Program {
         Scanner sc = new Scanner(System.in);
         System.out.print("Informe a quantidade de segundos: ");
         int val = sc.nextInt();
-        int segundo = val / 60;
-        int minutos = segundos / 60;
-        int horas = (minutos) /60;
-        System.out.println(horas + " " + minutos + " " + segundos);
+        int segundos = 0, minutos = 0, horas = 0;
+
+        System.out.printf("%d : %d : %d", horas,minutos,segundos);
+
 
     }
 }
