@@ -14,7 +14,7 @@ public class Program {
             vet[i] = sc.nextInt();
         }
         System.out.println("Dados na ordem original: " + Arrays.toString(vet));
-        for(int i = 0; i < vet.length; i++) {
+        for(int i = 0; i < vet.length - 1; i++) {
             if (vet[i] == 0 && vet[i + 1] != 0) {
                 vet[i] = vet[i + 1];
                 vet[i + 1] = 0;
