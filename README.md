@@ -2,4 +2,11 @@ Repositório dedicado para o upload de exercícios concluídos durante os meus e
 
 Atualmente a linguagem principal que estudo é Java.
 
-Exercícios obtidos durante a graduação de Sistemas de Informação e no curso Java COMPLETO - Prof. Dr. Nélio Alves na Udemy.
+Exercícios:
+
+Java
+Matéria Programação de Sistemas 1
+Curso Java COMPLETO - Prof. Dr. Nélio Alves
+
+Python
+Livro Entendendo Algoritmos
