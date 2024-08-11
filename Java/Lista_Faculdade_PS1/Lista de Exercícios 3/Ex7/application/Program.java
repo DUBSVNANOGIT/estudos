@@ -20,6 +20,13 @@ public class Program {
             for (int j = 0; j < column; j++) {
                System.out.print(matriz[i][j] + " ");
             }
+            System.out.println();
+        }
+        for (int j = 0; j < column; j++) {
+            for (int i = 0; i < row; i++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println();
         }
     }
 }
