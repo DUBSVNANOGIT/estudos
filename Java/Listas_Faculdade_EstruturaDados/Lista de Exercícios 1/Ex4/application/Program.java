@@ -13,7 +13,7 @@ public class Program {
         }
         for (int[] linha : mat) {
             for (int elemento : linha) {
-                System.out.println(elemento + " ");
+                System.out.print(elemento + " ");
             }
             System.out.println();
         }
