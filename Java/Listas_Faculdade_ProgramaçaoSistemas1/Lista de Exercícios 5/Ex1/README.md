@@ -1,0 +1,1 @@
+Escreva um programa em Java que defina uma classe chamado Pessoa, com dois atributos: nome e idade. Crie duas instâncias da classe Pessoa, defina valores para cada uma de suas propriedades e apresente as informações na tela.
