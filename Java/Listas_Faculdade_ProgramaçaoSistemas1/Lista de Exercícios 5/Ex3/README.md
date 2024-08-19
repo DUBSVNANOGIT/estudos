@@ -1,0 +1,1 @@
+Construa uma classe em Java para representar semáforos de trânsito, que contenha os atributos necessário para representar tanto a cor quanto a duração, um método que permitam mudar a cor (tal como é o ciclo de alternância real) e outros para retornar a condição de verde e vermelho
