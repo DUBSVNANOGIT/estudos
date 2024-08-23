@@ -5,8 +5,9 @@ Atualmente a linguagem principal que estudo é Java.
 Exercícios:
 
 # Java
-* Matéria Programação de Sistemas 1
+* Matéria Programação de Sistemas 1 & 2
 * Curso Java COMPLETO - Prof. Dr. Nélio Alves
 
 # Python
 * Livro Entendendo Algoritmos
+* Matéria Estrutura de Dados
