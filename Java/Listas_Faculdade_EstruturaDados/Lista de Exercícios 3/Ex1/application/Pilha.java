@@ -10,18 +10,22 @@ public class Pilha {
     }
 
     public boolean empilhar(int valor) {
-        if (topo == p.length) {
+        if (topo == p.length - 1) {
+            pilhaCheia();
             return false;
         }
+        topo = topo + 1;
         p[topo] = valor;
         return true;
     }
 
     public int desempilhar() {
-        if (topo <= 0) {
-            pilhaVazia();
+        if (pilhaVazia()) {
+            return -1;
         }
-        return topo = topo - 1;
+        else {
+            return topo = topo - 1;
+        }
     }
 
     public int mostrarTopo(){
