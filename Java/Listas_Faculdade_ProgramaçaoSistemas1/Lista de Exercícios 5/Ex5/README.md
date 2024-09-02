@@ -1,0 +1,1 @@
+Defina uma classe chamada Inventario, que contenha uma coleção de itens, métodos para adicionar e remover itens, e verificar se o inventário está baixo (menos de 5 itens). Implemente ainda um programa para testar as funcionalidades da classe criada.
