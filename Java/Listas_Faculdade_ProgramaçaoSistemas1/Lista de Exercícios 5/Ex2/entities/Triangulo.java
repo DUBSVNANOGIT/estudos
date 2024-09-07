@@ -9,7 +9,7 @@ public class Triangulo {
     }
 
     public void area() {
-        area = (base * altura) / 2;
+        double area = (base * altura) / 2;
         System.out.println("Área: " + area);
     }
 }
