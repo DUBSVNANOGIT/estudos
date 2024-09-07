@@ -1,4 +1,4 @@
-package application;
+package Ex1.application.application;
 
 import javax.swing.JOptionPane;
 
