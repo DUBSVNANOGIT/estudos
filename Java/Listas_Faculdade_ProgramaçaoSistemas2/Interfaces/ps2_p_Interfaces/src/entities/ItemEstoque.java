@@ -24,7 +24,4 @@ public class ItemEstoque {
 	public void setQtde(int qtde) {
 		this.qtde = qtde;
 	}
-	
-	
-
 }

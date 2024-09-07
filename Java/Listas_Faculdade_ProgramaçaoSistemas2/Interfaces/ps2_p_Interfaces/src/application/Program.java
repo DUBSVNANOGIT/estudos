@@ -16,7 +16,7 @@ public class Program {
 		estoque.adicionaProduto(p1, 10);
 		estoque.adicionaProduto(p2, 10);
 		p2.toString();
-		estoque.vender(p2);
+		estoque.realizarVenda();
 		p2.toString();
 	}
 

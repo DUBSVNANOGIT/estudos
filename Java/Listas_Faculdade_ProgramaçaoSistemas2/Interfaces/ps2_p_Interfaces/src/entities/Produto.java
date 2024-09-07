@@ -1,7 +1,6 @@
 package entities;
 
 import java.util.Date;
-import java.util.GregorianCalendar;
 
 public class Produto implements ItemVendavel, ItemPerecível {
 
@@ -43,7 +42,16 @@ public class Produto implements ItemVendavel, ItemPerecível {
 
 	@Override
 	public boolean isVendavel() {
-		return this.vendavel;
+		if (venceu() && vendavel) 
+			return true;
+		else 
+			return false;
+	}
+
+	@Override
+	public void vender(ItemEstoque item, int qtd) {
+		if (isVendavel() && item.getQtde() >= qtd)
+			item.setQtde(item.getQtde() - qtd);
 	}
 
 

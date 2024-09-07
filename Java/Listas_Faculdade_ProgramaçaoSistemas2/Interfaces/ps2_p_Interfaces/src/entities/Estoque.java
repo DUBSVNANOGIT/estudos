@@ -2,6 +2,7 @@ package entities;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Estoque {
 	private List <ItemEstoque> itensEstoque;
@@ -30,9 +31,28 @@ public class Estoque {
 		}
 		return aux;
 	}
-	
-	public void vender(Produto p) {
 
+	public void realizarVenda() {
+		System.out.println("Lista de Produtos disponíveis para venda.");
+		for (int i = 0; i < itensEstoque.size(); i++) {
+			if (itensEstoque.get(i).getProduto().isVendavel()) {
+			System.out.println((i + 1) + ". " + itensEstoque.get(i).getProduto().getNome() + " Valor: " + itensEstoque.get(i).getProduto().getPreco() + " Quantidade: " + itensEstoque.get(i).getQtde());
+			};
+		}
+		Scanner sc = new Scanner(System.in);
+		System.out.print("N° do Produto: ");
+		int aux = sc.nextInt();
+		System.out.print("Quantidade: ");
+		int qtde = sc.nextInt();
+		this.itensEstoque.get(aux - 1).getProduto().vender(this.itensEstoque.get(aux - 1), qtde);
+		for (int i = 0; i < itensEstoque.size(); i++) {
+			if (itensEstoque.get(i).getProduto().isVendavel()) {
+			System.out.println((i + 1) + ". " + itensEstoque.get(i).getProduto().getNome() + " Valor: " + itensEstoque.get(i).getProduto().getPreco() + " Quantidade: " + itensEstoque.get(i).getQtde());
+			};
+		}
+		for (ItemEstoque item : itensEstoque) {
+			System.out.println(item.getQtde());
+		}
 	}
 	
 	public void imprime() {
