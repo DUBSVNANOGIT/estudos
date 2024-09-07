@@ -23,6 +23,12 @@ public class Produto implements ItemVendavel, ItemPerecível {
 		this.vendavel = vendavel;
 		this.venc = venc;
 	}
+	public Produto(String nome, double preco, boolean perecivel, boolean vendavel) {
+		this.nome = nome;
+		this.preco = preco;
+		this.perecivel = perecivel;
+		this.vendavel = vendavel;
+	}
 	
 	public String getNome() {
 		return nome;
