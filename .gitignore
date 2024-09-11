@@ -2,3 +2,5 @@ out/
 .idea/
 db.properties
 *.sql
+.vscode
+out
