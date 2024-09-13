@@ -30,14 +30,9 @@ public final class App {
         //for (Conta c : contas) {
         //    System.out.println("# a conta " + c.getNumero() + " pertence a " + c.getTitular() + " e tem R$ " + c.getSaldo());
         //
-
         Conta c2 = repo.read(2);
         System.out.println("# a conta " + c2.getNumero() + " pertence a " + c2.getTitular() + " e tem R$ " + c2.getSaldo());
-
         System.out.println(repo.update(conta));
-        
-
-
     }
 
     public static void read() {
