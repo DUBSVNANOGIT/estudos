@@ -1,3 +1,15 @@
 {
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.project.sourcePaths": [
+        "Java/Listas_Faculdade_ProgramaçaoSistemas2/Interfaces/ps2_p_Interfaces/src",
+        "Java/Listas_Faculdade_ProgramaçaoSistemas2/Exception",
+        "Java/Listas_Faculdade_ProgramaçaoSistemas2/Ex2",
+        "Java/Listas_Faculdade_ProgramaçaoSistemas1/Lista de Exercícios 5/Ex5/entities",
+        "Java/Listas_Faculdade_ProgramaçaoSistemas1/Lista de Exercícios 5/Ex4",
+        "Java/Listas_Faculdade_ProgramaçaoSistemas1/Lista de Exercícios 5/Ex3",
+        "Java/Listas_Faculdade_ProgramaçaoSistemas1/Lista de Exercícios 5/Ex2/entities",
+        "Java/Listas_Faculdade_ProgramaçaoSistemas1/Lista de Exercícios 5/Ex2",
+        "Java/Listas_Faculdade_ProgramaçaoSistemas1/Lista de Exercícios 5/Ex1",
+        "Java/Listas_Faculdade_ProgramaçaoSistemas2/JDBC - erro/gerenciador/src/main/application"
+    ]
 }

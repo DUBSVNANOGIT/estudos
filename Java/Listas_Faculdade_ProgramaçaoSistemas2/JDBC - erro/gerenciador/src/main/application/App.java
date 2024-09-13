@@ -22,20 +22,20 @@ public final class App {
 
         String titular = "Arthur"; //sc.nextLine();
 
-        double saldo = 50.00; //Double.parseDouble(sc.nextLine());
+        double saldo = 50.0; //Double.parseDouble(sc.nextLine());
 
         Conta conta = new Conta(numero, titular, saldo);
         System.out.println("Certo até aqui");
-//
-//        int n = repo.criar(conta);
-//
-//        System.out.println(n);
-//
-//        List<Conta> contas = repo.lerTodas();
-//
-//        for (Conta c : contas) {
-//            System.out.println("# a conta " + c.getNumero() + " pertence a " + c.getTitular() + " e tem R$ " + c.getSaldo());
-//        }
+
+        int n = repo.criar(conta);
+
+        System.out.println(n);
+
+        List<Conta> contas = repo.lerTodas();
+
+        for (Conta c : contas) {
+            System.out.println("# a conta " + c.getNumero() + " pertence a " + c.getTitular() + " e tem R$ " + c.getSaldo());
+        }
 
 
     }
