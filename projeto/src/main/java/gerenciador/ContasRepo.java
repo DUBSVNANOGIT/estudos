@@ -13,7 +13,7 @@ public class ContasRepo {
     PreparedStatement stmCreate;
     PreparedStatement stmRead;
     public ContasRepo() throws SQLException {
-        String url = "jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:6543/postgres?user=postgres.xwwanfrmrvlvwrxynxos&password=zowiebowie1*";
+        String url = "jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:6543/postgres?user=postgres.xwwanfrmrvlvwrxynxos&password=-*";
         Connection c = DriverManager.getConnection(url);
         String sqlC = "insert into contas values (?,?,?)";
         stmCreate = c.prepareStatement(sqlC);
@@ -38,7 +38,7 @@ public class ContasRepo {
 
     public int update(Conta conta) {
         try {
-            String url = "jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:6543/postgres?user=postgres.xwwanfrmrvlvwrxynxos&password=zowiebowie1*";
+            String url = "jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:6543/postgres?user=postgres.xwwanfrmrvlvwrxynxos&password=-*";
             Connection c = DriverManager.getConnection(url);
             Scanner sc = new Scanner(System.in);
             System.out.print("Saldo a ser alterado: ");
@@ -56,7 +56,7 @@ public class ContasRepo {
         int numero;
         String titular;
         double saldo;
-        String url = "jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:6543/postgres?user=postgres.xwwanfrmrvlvwrxynxos&password=zowiebowie1*";
+        String url = "jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:6543/postgres?user=postgres.xwwanfrmrvlvwrxynxos&password=-*";
         Connection c = DriverManager.getConnection(url);
         stmRead = c.prepareStatement(stmRead + " where numero = " + n);
         ResultSet rs = stmRead.executeQuery();
