@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class ContasRepo {
     PreparedStatement stmCreate;
@@ -18,6 +19,36 @@ public class ContasRepo {
             stmCreate = c.prepareStatement(sqlC);
             String sqlR = "select * from contas";
             stmRead = c.prepareStatement(sqlR);
+    }
+
+    public int update(Conta conta) {
+        try {
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Saldo a ser alterado: ");
+            double saldo = sc.nextDouble();
+            return stmCreate.executeUpdate(String.format("UPDATE contas SET saldo = %f WHERE numero = %d", saldo, conta.getNumero()));
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+            return -1;
+        }
+
+    public Conta read(int n) throws SQLException {
+        int numero;
+        String titular;
+        double saldo;
+        String url = "jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:6543/postgres?user=postgres.xwwanfrmrvlvwrxynxos&password=zowiebowie1*";
+        Connection c = DriverManager.getConnection(url);
+        stmRead = c.prepareStatement(stmRead + " where numero = " + n);
+        ResultSet rs = stmRead.executeQuery();
+        if (rs.next()) {
+        numero = rs.getInt("numero");
+        titular = rs.getString("titular");
+        saldo = rs.getDouble("saldo");
+        Conta conta = new Conta(numero, titular, saldo);
+        return conta;
+        }
+        return null;
     }
 
     public List<Conta> lerTodas() throws SQLException {

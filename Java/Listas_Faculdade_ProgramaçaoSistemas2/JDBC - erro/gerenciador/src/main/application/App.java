@@ -18,24 +18,24 @@ public final class App {
 
     public static void main(String[] args) throws SQLException {
         ContasRepo repo = new ContasRepo();
-        int numero = 1; //Integer.parseInt(sc.nextLine());
-
-        String titular = "Arthur"; //sc.nextLine();
-
-        double saldo = 50.0; //Double.parseDouble(sc.nextLine());
-
-        Conta conta = new Conta(numero, titular, saldo);
+        // int numero = Integer.parseInt(sc.nextLine());
+        // String titular = sc.nextLine();
+        // double saldo = Double.parseDouble(sc.nextLine());
+        // Conta conta = new Conta(numero, titular, saldo);
+        Conta conta = new Conta(3, "Bob", 40.0);
         System.out.println("Certo até aqui");
-
         int n = repo.criar(conta);
+        //System.out.println(n);
+        //List<Conta> contas = repo.lerTodas();
+        //for (Conta c : contas) {
+        //    System.out.println("# a conta " + c.getNumero() + " pertence a " + c.getTitular() + " e tem R$ " + c.getSaldo());
+        //
 
-        System.out.println(n);
+        Conta c2 = repo.read(2);
+        System.out.println("# a conta " + c2.getNumero() + " pertence a " + c2.getTitular() + " e tem R$ " + c2.getSaldo());
 
-        List<Conta> contas = repo.lerTodas();
-
-        for (Conta c : contas) {
-            System.out.println("# a conta " + c.getNumero() + " pertence a " + c.getTitular() + " e tem R$ " + c.getSaldo());
-        }
+        System.out.println(repo.update(conta));
+        
 
 
     }
