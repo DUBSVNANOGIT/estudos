@@ -1,4 +1,4 @@
-package application;
+package gerenciador;
 
 public class Conta {
     private int numero;
@@ -35,3 +35,4 @@ public class Conta {
         this.saldo = saldo;
     }
 }
+
