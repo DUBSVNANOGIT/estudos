@@ -16,10 +16,10 @@ public class Program {
         Scanner sc = new Scanner(System.in);
         List<Produto> produtos = new ArrayList<>();
         popular(produtos);
-        System.out.println("Produtos: ");
-        for(Produto p : produtos) {
-            System.out.printf("\nCódigo: %d | Descrição: %s | Preço: %.2f",p.getCodigo(), p.getDescricao(), p.getPreco());
-        }
+//        System.out.println("Produtos: ");
+//        for(Produto p : produtos) {
+//            System.out.printf("\nCódigo: %d | Descrição: %s | Preço: %.2f",p.getCodigo(), p.getDescricao(), p.getPreco());
+//        }
         Carrinho carrinho = new Carrinho(buscarProduto(produtos, sc), 0.10);
         carrinho.mostraCarrinho();
     }
