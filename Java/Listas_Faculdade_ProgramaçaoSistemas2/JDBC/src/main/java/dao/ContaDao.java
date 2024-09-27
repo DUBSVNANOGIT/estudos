@@ -1,9 +1,9 @@
-package gerenciador;
+package dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import gerenciador.Conta;
+
+import java.math.BigDecimal;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -15,14 +15,13 @@ public class ContaDao implements IContaDAO {
     PreparedStatement pstmUpdate;
     PreparedStatement pstmDelete;
 
-    public ContaDao(Connection c) {
-        try {
-            this.pstmCreate = c.prepareStatement("insert into contas values (?,?,?)");
+    public ContaDao(String url) {
+        try (Connection c = DriverManager.getConnection(url)){
+            this.pstmCreate = c.prepareStatement("insert into contas values (?,?)");
             this.pstmRead = c.prepareStatement("select * ");
             this.pstmReadByNumero = c.prepareStatement("select * where numero = (?)");
             this.pstmUpdate = c.prepareStatement(String.format("UPDATE contas SET saldo = (?) WHERE numero = (?)"));
-            this.pstmDelete = c.prepareStatement("DELETE  * WHERE numero = (?)");
-            c.close();
+            this.pstmDelete = c.prepareStatement("DELETE FROM contas WHERE numero = (?)");
         }catch (SQLException e) {
             e.printStackTrace();
         }
@@ -30,9 +29,8 @@ public class ContaDao implements IContaDAO {
     @Override
     public boolean criar(Conta conta) {
         try {
-            pstmCreate.setInt(1, conta.getNumero());
-            pstmCreate.setString(2, conta.getTitular());
-            pstmCreate.setDouble(3, conta.getSaldo());
+            pstmCreate.setLong(1, conta.getNumero());
+            pstmCreate.setBigDecimal(2, conta.getSaldo());
             return (pstmCreate.executeUpdate() > 0);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -46,10 +44,9 @@ public class ContaDao implements IContaDAO {
         try {
             ResultSet rs = pstmRead.executeQuery();
             while (rs.next()) {
-                int numero = rs.getInt("numero");
-                String titular = rs.getString("titular");
-                double saldo = rs.getDouble("saldo");
-                Conta conta = new Conta(numero, titular, saldo);
+                long numero = rs.getLong("numero");
+                BigDecimal saldo = rs.getBigDecimal("saldo");
+                Conta conta = new Conta(numero, saldo);
                 contas.add(conta);
             }
             return contas;
@@ -74,10 +71,11 @@ public class ContaDao implements IContaDAO {
     public boolean atualizar(Conta conta) {
         System.out.println("Digite o novo saldo: ");
         Scanner sc = new Scanner(System.in);
-        double saldo = sc.nextDouble();
+        BigDecimal saldo = sc.nextBigDecimal();
         try {
-            pstmUpdate.setInt(1, conta.getNumero());
-            pstmUpdate.setDouble(2, saldo);
+            pstmUpdate.setLong(1, conta.getNumero());
+            pstmUpdate.setBigDecimal(2, saldo);
+            conta.setSaldo(saldo);
             return pstmUpdate.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -89,7 +87,7 @@ public class ContaDao implements IContaDAO {
     @Override
     public boolean apagar(Conta conta) {
         try {
-            pstmDelete.setInt(1, conta.getNumero());
+            pstmDelete.setLong(1, conta.getNumero());
             return pstmDelete.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();

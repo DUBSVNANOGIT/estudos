@@ -1,13 +1,11 @@
 package entities;
 
-import java.util.Random;
-
-public class Conta {
+public class Cliente {
     private long cpf;
     private String nome;
     private String rg;
 
-    public Conta(String nome, String rg) {
+    public Cliente(String nome, String rg) {
         this.cpf = gerarCpfAleatorio();
         this.nome = nome;
         this.rg = rg;

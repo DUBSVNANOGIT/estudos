@@ -1,37 +1,24 @@
 package gerenciador;
 
-public class Conta {
-    private int numero;
-    private String titular;
-    private double saldo;
+import java.math.BigDecimal;
 
-    public Conta(int numero, String titular, double saldo) {
+public class Conta {
+    private long numero;
+    private BigDecimal saldo;
+    public Conta(long numero, BigDecimal saldo) {
         this.numero = numero;
-        this.titular = titular;
         this.saldo = saldo;
     }
-
-    public int getNumero() {
+    public long getNumero() {
         return numero;
     }
-
-    public void setNumero(int numero) {
+    public void setNumero(long numero) {
         this.numero = numero;
     }
-
-    public String getTitular() {
-        return titular;
-    }
-
-    public void setTitular(String titular) {
-        this.titular = titular;
-    }
-
-    public double getSaldo() {
+    public BigDecimal getSaldo() {
         return saldo;
     }
-
-    public void setSaldo(double saldo) {
+    public void setSaldo(BigDecimal saldo) {
         this.saldo = saldo;
     }
 }
