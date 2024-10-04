@@ -9,7 +9,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 
-public class Program extends Application {
+public class App extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) {
