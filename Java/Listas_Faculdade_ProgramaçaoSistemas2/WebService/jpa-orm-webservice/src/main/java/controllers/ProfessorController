@@ -1,0 +1,47 @@
+
+@RestController
+public class ProfessorController {
+    @Autowired
+    private ProfessorRepo professorRepo;
+
+    public ProfessorController(){}
+
+    @GetMapping("/api/professores")
+    public Iterable<Professor> getProfessores() {
+        return professorRepo.findAll();
+    }
+
+    @GetMapping("/api/professores/{id}")
+    Optional<Professor> getProfessor(@PathVariable long id) {
+        return professorRepo.findById(id);
+    }
+
+    @PostMapping("/api/professores")
+    public Professor createProfessor(@RequestBody Professor p) {
+        Professor createdProf = professorRepo.save(p);
+        return createdProf;
+    }
+
+    Optional<Professor> updateProfessor (@RequestBody Professor professorRequest,
+    @PathVariable long professorId) {
+        Optional<Professor> opt = this.getProfessor(professorId);
+        if (opt.isPresent()) {
+            Professor professor = opt.get();
+            if (professorRequest.getId() == professor.getId()) {
+                professor.setNome(professorRequest.getNome();
+                professor.setMatricula(professorRequest.getMatricula());
+                professor.setArea(professorRequest.getArea());
+                professorRepo.save(professor);
+                return opt;
+            }
+        }
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND,
+        "Erro ao alterar dados do professor com id" + professorId);
+
+        public void deleteProfessor (@PathVariable long id) {
+            professorRepo.deleteById(id);
+        }
+    }
+
+
+}
