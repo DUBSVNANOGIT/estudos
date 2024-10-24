@@ -2,18 +2,18 @@
 @RestController
 public class ProfessorController {
     @Autowired
-    private ProfessorRepo professorRepo;
+    private ProfessorDAO professorDao;
 
     public ProfessorController(){}
 
     @GetMapping("/api/professores")
     public Iterable<Professor> getProfessores() {
-        return professorRepo.findAll();
+        return professordao.listarProfessores();
     }
 
     @GetMapping("/api/professores/{id}")
     Optional<Professor> getProfessor(@PathVariable long id) {
-        return professorRepo.findById(id);
+        return professorDao.buscarPorId(id);
     }
 
     @PostMapping("/api/professores")
