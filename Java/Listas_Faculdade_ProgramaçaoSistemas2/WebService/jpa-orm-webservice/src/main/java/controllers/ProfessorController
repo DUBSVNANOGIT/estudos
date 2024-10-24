@@ -18,7 +18,7 @@ public class ProfessorController {
 
     @PostMapping("/api/professores")
     public Professor createProfessor(@RequestBody Professor p) {
-        Professor createdProf = professorRepo.save(p);
+        Professor createdProf = professorDao.create(p);
         return createdProf;
     }
 
@@ -38,8 +38,9 @@ public class ProfessorController {
         throw new ResponseStatusException(HttpStatus.NOT_FOUND,
         "Erro ao alterar dados do professor com id" + professorId);
 
-        public void deleteProfessor (@PathVariable long id) {
-            professorRepo.deleteById(id);
+        @DeleteMapping
+        public void deleteById(@PathVariable long id) {
+            professorDao.deleteById(id);
         }
     }
 

@@ -8,11 +8,11 @@ import entities.Professor;
 public class ProfessorDAO {
     private Connection conn;
     public ProfessorDAO() throws Exception {
-        Class.forName("org.postgressql.Driver");
-        String url = "jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:6543/postgres?user=postgres.xwwanfrmrvlvwrxynxos&password=zowiebowie1*";
-        String user = "";
-        String password = "";
-        this.conn = DriverManager.getConnection(url);
+        Class.forName("org.postgresql.Driver");
+        String url = "jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:6543";
+        String user = "xwwanfrmrvlvwrxynxos";
+        String password = "zowiebowie1*";
+        this.conn = DriverManager.getConnection(url,user,password);
     }
 
     public Professor create(Professor professor) throws Exception {
@@ -49,5 +49,11 @@ public class ProfessorDAO {
             }
         }
         return null;
+    }
+
+    public void deleteById(long id) throws Exception {
+        PreparedStatement pstm = conn.prepareStatement("DELETE * frOM PROFESSORES WHERE id = ?");
+        pstm.setLong(1, id);
+        pstm.executeUpdate();
     }
 }
