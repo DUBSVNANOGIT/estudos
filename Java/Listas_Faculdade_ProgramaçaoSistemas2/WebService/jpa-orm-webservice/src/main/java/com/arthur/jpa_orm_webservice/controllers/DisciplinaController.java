@@ -1,4 +1,4 @@
-package controllers;
+package com.arthur.jpa_orm_webservice.controllers;
 
 import java.util.Optional;
 
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import dao.DisciplinaDAO;
-import entities.Disciplina;
-import entities.Professor;
+import com.arthur.jpa_orm_webservice.dao.DisciplinaDAO;
+import com.arthur.jpa_orm_webservice.entities.Disciplina;
+
 import jakarta.annotation.PostConstruct;
 
 @RestController
@@ -44,13 +44,14 @@ public class DisciplinaController {
         if (opt.isPresent()) {
             Disciplina disciplina = opt.get();
             if (disciplinaRequest.getId() == disciplina.getId()) {
-                professor.setNome(disciplinaRequest.getNome());
-                professor.setMatricula(disciplinaRequest.getMatricula());
-                professor.setArea(disciplinaRequest.getArea());
-                professorRepo.save(professor);
+                disciplina.setNome(disciplinaRequest.getNome());
+                disciplina.setSigla(disciplinaRequest.getSigla());
+                disciplina.setSemestre((disciplinaRequest.getSemestre()));
+                disciplinaDao.save(disciplina);
                 return opt;
             }
         }
         throw new ResponseStatusException(HttpStatus.NOT_FOUND,
-        "Erro ao alterar dados do professor com id" + professorId);
+        "Erro ao alterar dados do professor com id" + disciplinaId);
+}
 }

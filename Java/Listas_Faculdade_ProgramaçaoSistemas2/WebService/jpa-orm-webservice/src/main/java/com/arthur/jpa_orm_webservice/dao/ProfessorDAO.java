@@ -1,9 +1,9 @@
-package dao;
+package com.arthur.jpa_orm_webservice.dao;
 
 import java.sql.*;
 import java.util.*;
 
-import entities.Professor;
+import com.arthur.jpa_orm_webservice.entities.Professor;
 
 public class ProfessorDAO {
     private Connection conn;

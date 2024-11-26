@@ -1,4 +1,4 @@
-package entities;
+package com.arthur.jpa_orm_webservice.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -13,6 +13,7 @@ public class Disciplina {
     private String nome;
     private String sigla;
     private int semestre;
+    
     public Disciplina(long id, String nome, String sigla, int semestre) {
         this.id = id;
         this.nome = nome;

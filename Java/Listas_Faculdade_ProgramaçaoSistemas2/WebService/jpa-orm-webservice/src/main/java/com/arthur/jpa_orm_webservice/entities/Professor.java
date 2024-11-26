@@ -1,4 +1,4 @@
-package entities;
+package com.arthur.jpa_orm_webservice.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
